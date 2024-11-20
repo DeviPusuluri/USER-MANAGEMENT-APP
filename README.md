@@ -1,74 +1,97 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# User Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based user management application that allows you to view, add, edit, and delete users. The app features light and dark mode toggling, a responsive UI, and a pop-up form for adding and editing users. Data is fetched from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User List**: Display a list of users with first name, last name, email, and department.
+- **Add User**: Add a new user to the list via a pop-up form.
+- **Edit User**: Edit an existing user’s details via an inline form.
+- **Delete User**: Delete a user from the list.
+- **Light/Dark Mode**: Toggle between light and dark themes for the overall application.
+- **Responsive Design**: The UI is responsive and works well on different screen sizes.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: For building the UI components.
+- **Axios**: For making API calls to fetch user data and perform CRUD operations.
+- **CSS**: For styling the app and implementing light/dark themes.
+- **JSONPlaceholder API**: For fetching mock user data.
+- **React State & Effects**: For handling user data and UI states.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+### Prerequisites
+- Ensure you have **Node.js** and **npm** installed on your machine. You can download them from [here](https://nodejs.org/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Steps to Install
 
-### `npm run build`
+1. Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/your-username/user-management-app.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  Navigate into the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+Copy code
+cd user-management-app
+3.  Install the dependencies:
 
-### `npm run eject`
+bash
+Copy code
+npm install
+4.  Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy code
+npm start
+5.  Open your browser and go to http://localhost:3000 to view the app.
+src/
+├── components/
+│   ├── Header.js          # Header with light/dark mode toggle
+│   ├── UserList.js        # Displays the list of users
+│   ├── UserForm.js        # Handles adding/editing users
+│   └── Pagination.js      # Pagination component (optional)
+├── styles/
+│   ├── LightTheme.css     # Styles for light mode
+│   └── DarkTheme.css      # Styles for dark mode
+├── App.js                 # Main component
+├── index.js               # Entry point
+├── api/
+│   └── api.js             # Axios API instance
+└── utils/
+    └── validation.js      # Input validation functions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Components
+1. App.js
+The main wrapper for the entire application.
+Contains the state for light/dark mode and user data.
+Renders the Header, UserList, and UserForm components.
+2. UserList.js
+Displays a table of users with "Edit" and "Delete" buttons.
+Fetches data from the API using useEffect.
+Allows for editing and deleting users.
+3. UserForm.js
+A form used for adding or editing user details.
+Contains fields for first name, last name, email, and department.
+Appears as a pop-up form when adding a user or editing an existing one.
+4. Header.js
+Contains the title of the application and a toggle for switching between light and dark modes.
+5. Pagination.js (Optional)
+If you want to paginate the list of users, this component can be used to handle pagination logic.
+API Integration
+GET /users: Fetches the list of users from JSONPlaceholder API.
+POST /users: Sends a new user to the API (currently mocked since JSONPlaceholder doesn't persist data).
+PUT /users/{id}: Updates an existing user’s data.
+DELETE /users/{id}: Deletes a user from the list.
+Styling
+The app supports light mode and dark mode for improved user experience.
+You can toggle between light and dark themes using the switch in the header.
+Known Issues
+The changes (add, edit, delete) are not persistent because the app uses the JSONPlaceholder API, which is a mock API.
+Contributing
+Feel free to fork this repository and submit pull requests with improvements, bug fixes, or features.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# USER-MANAGEMENT-APP
->>>>>>> 910ca7550c0fb5aeca1553770f9bf341b1f7fad5
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
