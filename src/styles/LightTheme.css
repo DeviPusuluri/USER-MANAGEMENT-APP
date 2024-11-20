@@ -1,0 +1,15 @@
+body {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .header {
+    background-color: #f4f4f4;
+    padding: 1rem;
+  }
+  
+  button {
+    background-color: #008cba;
+    color: white;
+  }
+  
