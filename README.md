@@ -47,6 +47,11 @@ bash
 Copy code
 npm start
 5.  Open your browser and go to http://localhost:3000 to view the app.
+
+
+STRUCTURE -->
+
+
 src/
 ├── components/
 │   ├── Header.js          # Header with light/dark mode toggle
@@ -63,7 +68,11 @@ src/
 └── utils/
     └── validation.js      # Input validation functions
 
-Components
+
+
+
+
+Components-->
 1. App.js
 The main wrapper for the entire application.
 Contains the state for light/dark mode and user data.
@@ -93,5 +102,5 @@ The changes (add, edit, delete) are not persistent because the app uses the JSON
 Contributing
 Feel free to fork this repository and submit pull requests with improvements, bug fixes, or features.
 
-License
+License-->
 This project is licensed under the MIT License - see the LICENSE file for details.
